@@ -1,4 +1,4 @@
-package ru.foxdev.criminalintent
+package ru.foxdev.criminalintent.model
 
 import androidx.lifecycle.ViewModel
 

@@ -1,5 +1,4 @@
-package ru.foxdev.criminalintent
-
+package ru.foxdev.criminalintent.controller
 
 import android.os.Bundle
 import android.util.Log
@@ -9,10 +8,12 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
-
+import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import ru.foxdev.criminalintent.R
+import ru.foxdev.criminalintent.model.Crime
+import ru.foxdev.criminalintent.model.CrimeListViewModel
 
 private const val TAG = "CrimeListFragment"
 
@@ -22,7 +23,7 @@ class CrimeListFragment : Fragment() {
     private var adapter: CrimeAdapter? = null
 
     private val crimeListViewModel: CrimeListViewModel by lazy {
-        ViewModelProvider(this).get(CrimeListViewModel::class.java)
+        ViewModelProviders.of(this).get(CrimeListViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {

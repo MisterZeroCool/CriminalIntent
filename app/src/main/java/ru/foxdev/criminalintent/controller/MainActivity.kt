@@ -1,7 +1,8 @@
-package ru.foxdev.criminalintent
+package ru.foxdev.criminalintent.controller
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import ru.foxdev.criminalintent.R
 
 class MainActivity : AppCompatActivity() {
 
