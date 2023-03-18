@@ -1,4 +1,4 @@
-package ru.foxdev.criminalintent
+package ru.foxdev.criminalintent.model
 
 import java.util.Date
 import java.util.UUID
