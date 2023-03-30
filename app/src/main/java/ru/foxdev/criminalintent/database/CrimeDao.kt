@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import ru.foxdev.criminalintent.model.Crime
 import java.util.*
 
@@ -18,4 +19,7 @@ interface CrimeDao {
 
     @Insert
     fun addCrime(crime: Crime) //remove this before pushing
+
+    @Update
+    fun updateCrime(crime: Crime)
 }

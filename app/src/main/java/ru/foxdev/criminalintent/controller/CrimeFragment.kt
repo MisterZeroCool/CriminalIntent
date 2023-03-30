@@ -15,6 +15,7 @@ import ru.foxdev.criminalintent.R
 import ru.foxdev.criminalintent.model.Crime
 import ru.foxdev.criminalintent.model.CrimeDetailViewModel
 import java.util.*
+import androidx.lifecycle.Observer
 
 private const val TAG = "CrimeFragment"
 private const val ARG_CRIME_ID = "crime_id"
@@ -55,17 +56,16 @@ class CrimeFragment : Fragment() {
         return view
     }
 
-//    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-//        super.onViewCreated(view, savedInstanceState)
-//        crimeDetailViewModel.crimeLiveData.observe(
-//            viewLifecycleOwner,
-//            Observer { crime ->
-//                crime?.let {
-//                    this.crime = crime
-//                    updateUI()
-//                }
-//            })
-//    }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        crimeDetailViewModel.crimeLiveData.observe(
+            viewLifecycleOwner,
+            androidx.lifecycle.Observer { crime ->crime?.let {
+                this.crime = crime
+                updateUI()
+            } }
+        )
+    }
 
     override fun onStart() {
         super.onStart()
@@ -116,6 +116,8 @@ class CrimeFragment : Fragment() {
             jumpDrawablesToCurrentState()
         }
     }
+
+
 
     companion object {
 
